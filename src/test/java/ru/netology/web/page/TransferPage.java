@@ -2,7 +2,6 @@ package ru.netology.web.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.web.data.DataHelper;
 
 import java.time.Duration;
 
@@ -27,13 +26,13 @@ public class TransferPage {
     }
 
 
-    public void makeTransfer(String amount, String  cardNumber) {
+    public void makeTransfer(String amount, String cardNumber) {
         amountInput.setValue(amount);
         fromInput.setValue(cardNumber);
         transferButton.click();
     }
 
-    public DashboardPage makeValidTransfer(String amount, String  cardNumber) {
+    public DashboardPage makeValidTransfer(String amount, String cardNumber) {
         makeTransfer(amount, cardNumber);
         return new DashboardPage();
     }

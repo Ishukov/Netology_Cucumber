@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Assertions;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.LoginPage;
-import ru.netology.web.page.TransferPage;
-import ru.netology.web.page.VerificationPage;
 
 import static ru.netology.web.data.DataHelper.getFirstCardInfo;
 import static ru.netology.web.data.DataHelper.getSecondCardInfo;
