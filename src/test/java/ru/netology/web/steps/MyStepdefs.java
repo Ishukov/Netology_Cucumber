@@ -1,9 +1,9 @@
 package ru.netology.web.steps;
 
 import com.codeborne.selenide.Selenide;
-import io.cucumber.java.ru.Когда;
-import io.cucumber.java.ru.Пусть;
-import io.cucumber.java.ru.Тогда;
+import io.cucumber.java.ru.РљРѕРіРґР°;
+import io.cucumber.java.ru.РџСѓСЃС‚СЊ;
+import io.cucumber.java.ru.РўРѕРіРґР°;
 import org.junit.jupiter.api.Assertions;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.DashboardPage;
@@ -14,8 +14,8 @@ import static ru.netology.web.data.DataHelper.getSecondCardInfo;
 
 public class MyStepdefs {
 
-    @Пусть("пользователь залогинен с именем {string} и паролем {string}")
-    public void пользовательЗалогиненСИменемИПаролем(String login, String password) {
+    @РџСѓСЃС‚СЊ("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р·Р°Р»РѕРіРёРЅРµРЅ СЃ РёРјРµРЅРµРј {string} Рё РїР°СЂРѕР»РµРј {string}")
+    public void РїРѕР»СЊР·РѕРІР°С‚РµР»СЊР—Р°Р»РѕРіРёРЅРµРЅРЎРРјРµРЅРµРјРРџР°СЂРѕР»РµРј(String login, String password) {
         var loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
         var verificationPage = loginPage.validLogin(login, password);
         var authInfo = DataHelper.getAuthInfo();
@@ -23,8 +23,8 @@ public class MyStepdefs {
         verificationPage.validVerify(verificationCode);
     }
 
-    @Когда("пользователь переводит {int} рублей с карты с номером {string} на свою {int} карту с главной страницы")
-    public void пользовательПереводитРублейСКартыСНомеромНаСвоюКартуСГлавнойСтраницы(int amount, String fromCardNo, int toCard) {
+    @РљРѕРіРґР°("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРµСЂРµРІРѕРґРёС‚ {int} СЂСѓР±Р»РµР№ СЃ РєР°СЂС‚С‹ СЃ РЅРѕРјРµСЂРѕРј {string} РЅР° СЃРІРѕСЋ {int} РєР°СЂС‚Сѓ СЃ РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹")
+    public void РїРѕР»СЊР·РѕРІР°С‚РµР»СЊРџРµСЂРµРІРѕРґРёС‚Р СѓР±Р»РµР№РЎРљР°СЂС‚С‹РЎРќРѕРјРµСЂРѕРјРќР°РЎРІРѕСЋРљР°СЂС‚СѓРЎР“Р»Р°РІРЅРѕР№РЎС‚СЂР°РЅРёС†С‹(int amount, String fromCardNo, int toCard) {
         DashboardPage dashboardPage = new DashboardPage();
         DataHelper.CardInfo toCardInfo;
         if (toCard == 2) {
@@ -35,8 +35,8 @@ public class MyStepdefs {
         transferPage.makeValidTransfer(String.valueOf(amount), fromCardNo);
     }
 
-    @Тогда("баланс его {} карты из списка на главной странице должен стать {} рублей")
-    public void балансЕгоКартыИзСпискаНаГлавнойСтраницеДолженСтатьРублей(int toCard, int expectedBalance) {
+    @РўРѕРіРґР°("Р±Р°Р»Р°РЅСЃ РµРіРѕ {} РєР°СЂС‚С‹ РёР· СЃРїРёСЃРєР° РЅР° РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РґРѕР»Р¶РµРЅ СЃС‚Р°С‚СЊ {} СЂСѓР±Р»РµР№")
+    public void Р±Р°Р»Р°РЅСЃР•РіРѕРљР°СЂС‚С‹РР·РЎРїРёСЃРєР°РќР°Р“Р»Р°РІРЅРѕР№РЎС‚СЂР°РЅРёС†РµР”РѕР»Р¶РµРЅРЎС‚Р°С‚СЊР СѓР±Р»РµР№(int toCard, int expectedBalance) {
         DashboardPage dashboardPage = new DashboardPage();
         DataHelper.CardInfo toCardInfo;
         if (toCard == 2) {
