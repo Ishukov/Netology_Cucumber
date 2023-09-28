@@ -5,7 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/test/java/ru/netology/web/page/DashboardPage.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/ru/netology/web/page/TransferPage.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/ru/netology/web/steps/MyStepdefs.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/test/resources/features/Transfer.feature" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/features/Transfer.feature" charset="windows-1251" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>
